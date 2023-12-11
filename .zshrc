@@ -65,6 +65,9 @@ alias l='ls -CF'
 alias x='clear'
 alias dup='gnome-terminal&>/dev/null&;disown'
 alias grep='grep -in --color --exclude-dir=.venv'
+alias gswc='git switch -c '
+alias glog='git log '
+alias gsw='git switch '
 
 # case insensitive path-completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
@@ -79,6 +82,7 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "\e[A" up-line-or-beginning-search
 bindkey "\e[B" down-line-or-beginning-search
+bindkey "^R" history-incremental-search-backward
 
 #new keybindings
 bindkey "^[[1;5C" forward-word
@@ -88,3 +92,6 @@ bindkey "^H" backward-delete-word
 # disable terminal freeze
 stty -ixon
 unsetopt BEEP
+
+# enable vim key bindings
+bindkey -v
